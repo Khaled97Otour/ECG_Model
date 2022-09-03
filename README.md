@@ -53,7 +53,11 @@ _________________________________________________________________
 None
 
 ## Results:
+loss: 0.0649 - accuracy: 0.9851 - val_loss: 0.0973 - val_accuracy: 0.9652
 loss: 0.3073 - accuracy: 0.8916 - val_loss: 0.2991 - val_accuracy: 0.8965
+
+model.evaluate:
+ loss: 0.1075 - accuracy: 0.9650
 
 ![download](https://user-images.githubusercontent.com/93203143/182677259-e82673be-97fb-4f48-83ee-1783a3cc6266.png)
 ![download (1)](https://user-images.githubusercontent.com/93203143/182677264-0b077de0-4dea-4b63-b7ce-199ef03690aa.png)

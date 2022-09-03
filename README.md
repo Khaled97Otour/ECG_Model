@@ -57,6 +57,8 @@ loss: 0.0649 - accuracy: 0.9851 - val_loss: 0.0973 - val_accuracy: 0.9652
 
 model.evaluate:
  loss: 0.1075 - accuracy: 0.9650
+ 
+ 
 ![download](https://user-images.githubusercontent.com/93203143/188266842-86736ced-9739-48f3-941a-c8c2cbabc9bb.png)
 ![download (1)](https://user-images.githubusercontent.com/93203143/188266844-e1b20014-8510-4009-92f6-c0d5a3edb12e.png)
 

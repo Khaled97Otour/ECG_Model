@@ -1,62 +1,69 @@
 # ECG_Model
 A CNN to predict the Abnormal ECG signals.
-### I collect the data from local hospitals 
+### I collect the data from local hospitals the data was preprocess , normalized and saperated into two files(one for each class) 
 ## Algorithm :
-### First Signal pre processing :
-in this function I use for loops to help me filtering the signals and delete the high frequnce noice taking in mind the range of the signals and the length 
-- side_note: this process could be used in any code to help clean any ECG dataset. 
-### Second Do dataset:
 - building dataset after cleaning all the signals and establish a dataframe as well as define a colume of labels.
 - labeling the input data and build the steps.
 - I use a reshape function to build a signal 188 to 10.
 - I take steps each one langth was 18.
-### third building model:
+### Building model:
 Rnn model was built using TimeDistributed(10 steps) and 1d CNN model to extract the features.
 
-Model: sequential_1
+Model: sequential
 ### Layer (type)                Output Shape              Param   
 =================================================================
-
- time_distributed_1 (TimeDi  (None, 10, 256)          363072    
- stributed)                                                      
+ time_distributed (TimeDistr  (None, 10, 256)          353024    
+ ibuted)                                                         
                                                                  
- lstm_1 (LSTM)              (None, 64)                82176     
+ lstm (LSTM)                 (None, 64)                82176     
                                                                  
- dense_1 (Dense)           (None, 1024)              66560     
+ dense (Dense)               (None, 1024)              66560     
                                                                  
- dense_2 (Dense)           (None, 512)               524800    
+ batch_normalization (BatchN  (None, 1024)             4096      
+ ormalization)                                                   
                                                                  
- dense_3 (Dense)           (None, 256)               131328    
+ dense_1 (Dense)             (None, 512)               524800    
                                                                  
- dense_4 (Dense)           (None, 128)               32896     
+ batch_normalization_1 (Batc  (None, 512)              2048      
+ hNormalization)                                                 
                                                                  
- dense_5 (Dense)           (None, 64)                8256      
+ dense_2 (Dense)             (None, 256)               131328    
                                                                  
- dense_6 (Dense)           (None, 32)                2080      
+ batch_normalization_2 (Batc  (None, 256)              1024      
+ hNormalization)                                                 
                                                                  
- batch_normalization_1 (Ba  (None, 32)               128       
- tchNormalization)                                               
+ dense_3 (Dense)             (None, 128)               32896     
                                                                  
- dropout_1 (Dropout)       (None, 32)                0         
+ batch_normalization_3 (Batc  (None, 128)              512       
+ hNormalization)                                                 
                                                                  
- dense_7 (Dense)           (None, 2)                 66        
+ dense_4 (Dense)             (None, 64)                8256      
+                                                                 
+ batch_normalization_4 (Batc  (None, 64)               256       
+ hNormalization)                                                 
+                                                                 
+ dense_5 (Dense)             (None, 32)                2080      
+                                                                 
+ batch_normalization_5 (Batc  (None, 32)               128       
+ hNormalization)                                                 
+                                                                 
+ dropout (Dropout)           (None, 32)                0         
+                                                                 
+ dense_6 (Dense)             (None, 1)                 33        
                                                                  
 =================================================================
-
-Total params: 1,211,362
-
-Trainable params: 1,211,298
-
-Non-trainable params: 64
+Total params: 1,209,217
+Trainable params: 1,205,185
+Non-trainable params: 4,032
 _________________________________________________________________
 
 None
 
 ## Results:
-loss: 0.0649 - accuracy: 0.9851 - val_loss: 0.0973 - val_accuracy: 0.9652
+52/52 [==============================] - 2s 31ms/step - loss: 0.0763 - accuracy: 0.9776 - val_loss: 0.0919 - val_accuracy: 0.9695
 
 model.evaluate:
- loss: 0.1075 - accuracy: 0.9650
+ loss: 0.1072 - accuracy: 0.9650
  
  
 ![download](https://user-images.githubusercontent.com/93203143/188266842-86736ced-9739-48f3-941a-c8c2cbabc9bb.png)
